@@ -1,0 +1,102 @@
+stanley:OpSys$ ./a.out
+ls
+a.out     copycat.c mysh.c    script.sh walker.c
+Command returned with return code 0
+consuming 0.003 real seconds, 0.001 user, 0.002 system
+
+ls -al >output
+Executing command ls with arguments "-al "
+Command returned with return code 0
+consuming 0.005 real seconds, 0.001 user, 0.002 system
+
+cat output
+total 96
+drwxr-xr-x  8 stanley  staff    272 Oct 19 20:18 .
+drwxr-xr-x  6 stanley  staff    204 Oct 12 15:12 ..
+-rwxr-xr-x  1 stanley  staff  13556 Oct 19 20:17 a.out
+-rw-r--r--@ 1 stanley  staff   3984 Sep 21 19:53 copycat.c
+-rw-r--r--  1 stanley  staff   8200 Oct 19 20:12 mysh.c
+-rw-r--r--  1 stanley  staff      0 Oct 19 20:18 output
+-rwxr--r--  1 stanley  staff    198 Oct 19 19:00 script.sh
+-rw-r--r--  1 stanley  staff   8273 Oct  5 20:53 walker.c
+Command returned with return code 0
+consuming 0.003 real seconds, 0.001 user, 0.001 system
+
+cat output >>output2
+Command returned with return code 0
+consuming 0.003 real seconds, 0.001 user, 0.002 system
+
+cat output2
+total 96
+drwxr-xr-x  8 stanley  staff    272 Oct 19 20:18 .
+drwxr-xr-x  6 stanley  staff    204 Oct 12 15:12 ..
+-rwxr-xr-x  1 stanley  staff  13556 Oct 19 20:17 a.out
+-rw-r--r--@ 1 stanley  staff   3984 Sep 21 19:53 copycat.c
+-rw-r--r--  1 stanley  staff   8200 Oct 19 20:12 mysh.c
+-rw-r--r--  1 stanley  staff      0 Oct 19 20:18 output
+-rwxr--r--  1 stanley  staff    198 Oct 19 19:00 script.sh
+-rw-r--r--  1 stanley  staff   8273 Oct  5 20:53 walker.c
+Command returned with return code 0
+consuming 0.003 real seconds, 0.001 user, 0.001 system
+
+cat <output >>output2
+Command returned with return code 0
+consuming 0.003 real seconds, 0.001 user, 0.002 system
+
+cat output2
+total 96
+drwxr-xr-x  8 stanley  staff    272 Oct 19 20:18 .
+drwxr-xr-x  6 stanley  staff    204 Oct 12 15:12 ..
+-rwxr-xr-x  1 stanley  staff  13556 Oct 19 20:17 a.out
+-rw-r--r--@ 1 stanley  staff   3984 Sep 21 19:53 copycat.c
+-rw-r--r--  1 stanley  staff   8200 Oct 19 20:12 mysh.c
+-rw-r--r--  1 stanley  staff      0 Oct 19 20:18 output
+-rwxr--r--  1 stanley  staff    198 Oct 19 19:00 script.sh
+-rw-r--r--  1 stanley  staff   8273 Oct  5 20:53 walker.c
+total 96
+drwxr-xr-x  8 stanley  staff    272 Oct 19 20:18 .
+drwxr-xr-x  6 stanley  staff    204 Oct 12 15:12 ..
+-rwxr-xr-x  1 stanley  staff  13556 Oct 19 20:17 a.out
+-rw-r--r--@ 1 stanley  staff   3984 Sep 21 19:53 copycat.c
+-rw-r--r--  1 stanley  staff   8200 Oct 19 20:12 mysh.c
+-rw-r--r--  1 stanley  staff      0 Oct 19 20:18 output
+-rwxr--r--  1 stanley  staff    198 Oct 19 19:00 script.sh
+-rw-r--r--  1 stanley  staff   8273 Oct  5 20:53 walker.c
+Command returned with return code 0
+consuming 0.003 real seconds, 0.001 user, 0.002 system
+
+ls -l tempnothere 2>outerror
+Executing command ls with arguments "-l "
+Command returned with return code 1
+consuming 0.003 real seconds, 0.001 user, 0.002 system
+
+cat outerror
+ls: tempnothere: No such file or directory
+Command returned with return code 0
+consuming 0.003 real seconds, 0.001 user, 0.002 system
+
+ls -l tempnotactuallyhereagain 2>>outerror
+Executing command ls with arguments "-l "
+Command returned with return code 1
+consuming 0.004 real seconds, 0.001 user, 0.002 system
+
+cat outerror
+ls: tempnothere: No such file or directory
+ls: tempnotactuallyhereagain: No such file or directory
+Command returned with return code 0
+consuming 0.003 real seconds, 0.001 user, 0.002 system
+
+ls -l asdfasdf 2>>outerror
+Executing command ls with arguments "-l "
+Command returned with return code 1
+consuming 0.003 real seconds, 0.001 user, 0.002 system
+
+cat outerror
+ls: tempnothere: No such file or directory
+ls: tempnotactuallyhereagain: No such file or directory
+ls: asdfasdf: No such file or directory
+Command returned with return code 0
+consuming 0.003 real seconds, 0.001 user, 0.002 system
+
+end of file
+stanley:OpSys$
