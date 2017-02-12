@@ -1,5 +1,4 @@
-# Computer-Operating-Systems
-- Fall 2016
+# Computer-Operating-Systems (Fall 2016)
 
 ## Units
 1. An Introduction to the Operating System
