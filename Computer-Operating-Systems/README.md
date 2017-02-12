@@ -11,3 +11,6 @@
 8. Task / Context Switch
 9. I/O Devices, Drivers
 10. Inter-Process Communication with TCP/IP and sockets. Kernel network architecture
+
+Assignments were provided by Professor Hakner
+[faculty.cooper.edu/hak/ece357](faculty.cooper.edu/hak/ece357)
